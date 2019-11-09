@@ -9,12 +9,12 @@ This tutorial focusses on vanilla JS and does not use any libraries. You'll writ
 ## What will you learn in this tutorial? 
 
 - Variables 
-  - Constants, and variables
+  - Constants, and variable variables
 - Scope
-  - Closure
+  - Clossure
 - Functions
   - Callbacks
-  - Generic functions that con be applied anywhere 
+  - Generic functions that can be applied anywhere 
 - JS and CSS together
 - CSS
   - position absolute
