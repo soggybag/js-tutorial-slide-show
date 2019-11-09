@@ -2,34 +2,8 @@
 <html>
   <head>
     <title></title>
+    <link href="ms-slide-show.css" rel="stylesheet">
     <style>
-
-      /* ******************** */
-      /* These styles are required by the slide show */
-
-      /* Slide show container */
-
-      .slide-show {
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        position: relative;
-        margin: auto;
-      }
-
-      /* Slide show inner contains the slides images */
-
-      .slide-show > .slide-show-inner {
-        height: 100%;
-        position: absolute;
-        display: flex;
-        transform: translate3d(0,0,0);
-        transition: 1s;
-        transition-timing-function: ease-in-out;
-      }
-
-      /* ******************** */
-
 
       /* User defined styles */
       
@@ -58,7 +32,7 @@
   </head>
   <body>
 
-    <div class="banner">
+    <div class="banner ms-slide-show">
       <div class="slide-show" id="slides">
           <div class="slide-show-inner">
             <img src="images/bee-1200-400.jpg" width="1200" height="400">
@@ -73,8 +47,8 @@
 
     <div class="card-row">
 
-      <div class="card">
-        <div id="pollen" class="slide-show">
+      <div class="card ms-slide-show">
+        <div id="pollen" class="slide-show ms-slide-show">
           <div class="slide-show-inner">
             <img src="images/li-pollen-300-169.jpg" width="300" height="169">
             <img src="images/spores-300-169.jpg" width="300" height="169">
@@ -87,7 +61,7 @@
       </div>
 
       <div class="card">
-        <div id="pollen-2" class="slide-show">
+        <div id="pollen-2" class="slide-show ms-slide-show">
           <div class="slide-show-inner">
             <img src="images/Cactus_flower_pollen-300-169.jpg" width="300" height="169">
             <img src="images/hellebore-pollen-300-169.jpg" width="300" height="169">
@@ -100,7 +74,7 @@
       </div>
 
       <div class="card">
-          <div id="pollen-3" class="slide-show">
+          <div id="pollen-3" class="slide-show ms-slide-show">
             <div class="slide-show-inner">
               <img src="images/p1-300-169.jpg" width="300" height="169">
               <img src="images/p2-300-169.jpg" width="300" height="169">
@@ -114,32 +88,6 @@
 
     </div>
 
-
-    <script>
-      function init(slidesId) {
-        const slides = document.getElementById(slidesId)
-        const images = Array.from(slides.querySelectorAll('.slide-show-inner > img'))
-        const slidesInner = slides.querySelector('.slide-show-inner')
-
-        let index = 0
-        const w = slides.offsetWidth
-        console.log(w)
-
-        setInterval(() => {
-          index += 1
-          if (index === images.length) {
-            index = 0
-          }
-          // Use translate3d() for better performance!
-          slidesInner.style.transform = `translate3d(-${index * w}px, 0, 0)`
-        }, 3000)
-      }
-
-      init('slides')
-      init('pollen')
-      init('pollen-2')
-      init('pollen-3')
-
-    </script>
+    <script src="ms-slide-show.js"></script>
   </body>
 </html>
