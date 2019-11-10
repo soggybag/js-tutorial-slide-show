@@ -37,6 +37,7 @@ Follow the video tutorials here:
 
 If you made it through the tutorial here are some things you can try to extend the tutorial: 
 
+- **Swap the images for your own** - Use your own images in the slideshow. Making a new slideshow with different images from your code will give you a feel for how other developers would use your code. 
 - **Change the slide show direction** - Currently the slides move right to left. It would be fun if the slides moved vertically. Try to make them move down. 
   - Take this one step further by adding a data attribute like `data-direction`. Use this to configure the direction the slideshow animates. 
 - **Make slides that can be any element** - Currently the slide show looks for `img` elements as children of `.slides-inner`. Slides could be built with any element allow for images and text in slides. 
