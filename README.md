@@ -52,8 +52,9 @@ If you made it through the tutorial here are some things you can try to extend t
     - `data-style="vertical"` - a vertical transition bottom to top
     - `data-style="fade"` - a cross fade transition
 
-## TODO
+## TODOs
 
+- TODO: Add link to videos 
 - TODO: Post original source code from video tutorial
 - ~~TODO: Add a second slides show~~ 
 - TODO: Add buttons to advances slides
