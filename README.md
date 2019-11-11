@@ -32,6 +32,7 @@ In the repo you'll find the images folder with images used in the tutorial.
 
 Follow the video tutorials here: 
 
+https://www.youtube.com/watch?v=TV1WbQdusdU&list=PLoN_ejT35AEgjsI-YEuiif2BfpToamnGz&index=1
 
 ### Stretch Challenges 
 
