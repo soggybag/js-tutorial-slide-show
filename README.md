@@ -5,7 +5,6 @@ This repository contains all of the sample files to get started and the complete
 The goal of this tutorial is to create a JavaScript slideshow. The slideshow will be similar to what you see on web banners with images that cycle sliding right to left. You'll build the whole things from scratch. 
 
 The code used will also be portable, it will be able to be used in any web site without modification.   
-
 This tutorial focusses on vanilla JS and does not use any libraries. You'll write all of the code yourself! 
 
 ## What will you learn in this tutorial? 
@@ -33,6 +32,8 @@ In the repo you'll find the images folder with images used in the tutorial.
 Follow the video tutorials here: 
 
 https://www.youtube.com/watch?v=TV1WbQdusdU&list=PLoN_ejT35AEgjsI-YEuiif2BfpToamnGz&index=1
+
+You can view the completed tutorial here: https://soggybag.github.io/js-tutorial-slide-show/.
 
 ### Stretch Challenges 
 
