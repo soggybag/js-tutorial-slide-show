@@ -33,7 +33,7 @@ Follow the video tutorials here:
 
 https://www.youtube.com/watch?v=TV1WbQdusdU&list=PLoN_ejT35AEgjsI-YEuiif2BfpToamnGz&index=1
 
-You can view the completed tutorial here: https://soggybag.github.io/js-tutorial-slide-show/.
+You can view the completed tutorial here: https://soggybag.github.io/js-tutorial-slide-show/
 
 ### Stretch Challenges 
 
