@@ -1,93 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <title></title>
-    <link href="ms-slide-show.css" rel="stylesheet">
-    <style>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="ms-slide-show.css">
+        <style>
+            /* CSS Styles */
 
-      /* User defined styles */
-      
-      .banner {
-        width: 1200px;
-        height: 400px;
-        margin: auto;
-      }
+            /* Developer Styles */
+            #slides {
+                border: 2px solid red;
+                width: 1200px;
+                height: 400px;
+                margin: auto;
+            }
 
-      .card-row {
-        display: flex;
-        justify-content: center;
-      }
-
-      .card {
-        width: 300px;
-        border: 1px solid;
-        margin: 1em;
-      }
-
-      #pollen, #pollen-2, #pollen-3 {
-        height: 169px;
-      }
-
-    </style>
-  </head>
-  <body>
-
-    <div class="banner">
-      <div class="ms-slide-show" id="slides" data-indicators="true">
-          <div class="slide-show-inner">
-            <img src="images/bee-1200-400.jpg" width="1200" height="400">
-            <img src="images/beetle-1200-400.jpg" width="1200" height="400">
-            <img src="images/dandelion-1200-400.jpg" width="1200" height="400">
-            <img src="images/flower-900-300.jpg" width="1200" height="400">
-            <img src="images/ladybug-1200-400.jpg" width="1200" height="400">
-            <img src="images/PinkConeflower-1200-400.jpg" width="1200" height="400">
-          </div>
-        </div>
-    </div>
-
-    <div class="card-row">
-
-      <div class="card">
-        <div id="pollen" class="slide-show ms-slide-show" data-indicators="true">
-          <div class="slide-show-inner">
-            <img src="images/li-pollen-300-169.jpg" width="300" height="169">
-            <img src="images/spores-300-169.jpg" width="300" height="169">
-            <img src="images/toxic-mold-spore-300-169.jpg" width="300" height="169">
-            <img src="images/zsa-300-169.jpg" width="300" height="169">
-          </div>
-        </div>
-        <h3>Pollen</h3>
-        <p>It makes you sneeze.</p>
-      </div>
-
-      <div class="card">
-        <div id="pollen-2" class="slide-show ms-slide-show">
-          <div class="slide-show-inner">
-            <img src="images/Cactus_flower_pollen-300-169.jpg" width="300" height="169">
-            <img src="images/hellebore-pollen-300-169.jpg" width="300" height="169">
-            <img src="images/pollen-300-169.jpg" width="300" height="169">
-            <img src="images/yellow-polllen-300-169.jpg" width="300" height="169">
-          </div>
-        </div>
-        <h3>Pollen</h3>
-        <p>It makes you sneeze.</p>
-      </div>
-
-      <div class="card">
-          <div id="pollen-3" class="slide-show ms-slide-show">
-            <div class="slide-show-inner">
-              <img src="images/p1-300-169.jpg" width="300" height="169">
-              <img src="images/p2-300-169.jpg" width="300" height="169">
-              <img src="images/p3-300-169.jpg" width="300" height="169">
-              <img src="images/p4-300-169.jpg" width="300" height="169">
+            #slides-2 {
+                width: 300px;
+                height: 169px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- HTML -->
+        <div id="slides" class="slide-show ms-slide-show" data-delay="3000" data-transition="400">
+            
+            <div class="slides-inner">
+                <img src="images/bee-1200-400.jpg" width="1200" height="400" alt="bee">
+                <img src="images/beetle-1200-400.jpg" width="1200" height="400" alt="beetle">
+                <img src="images/dandelion-1200-400.jpg" width="1200" height="400" alt="dandelion">
+                <img src="images/ladybug-1200-400.jpg" width="1200" height="400" alt="ladybug">
             </div>
-          </div>
-          <h3>Pollen</h3>
-          <p>It makes you sneeze.</p>
+
+            <ol class="ms-slide-indicators">
+                <!-- slide indicators -->
+            </ol>
+
+            <a href="#" class="ms-next-button"></a>
+            <a href="#" class="ms-prev-button"></a>
         </div>
 
-    </div>
+        <div id="slides-2" class="slide-show ms-slide-show" data-delay="4000" data-transition="2000">
+            <div class="slides-inner">
+                <img src="images/hellebore-pollen-300-169.jpg" width="300" height="169" alt="hellbore">
+                <img src="images/li-pollen-300-169.jpg" width="300" height="169" alt="li pollen">
+                <img src="images/pollen-300-169.jpg" width="300" height="169" alt="pollen">
+                <img src="images/spores-300-169.jpg" width="300" height="169" alt="spores">
+                <img src="images/zsa-300-169.jpg" width="300" height="169" alt="zsa">
+            </div>
 
-    <script src="ms-slide-show.js"></script>
-  </body>
+        </div>
+
+
+        <script src="ms-slide-show.js"></script>
+        <script>
+            // Other code 
+        </script>
+    </body>
 </html>

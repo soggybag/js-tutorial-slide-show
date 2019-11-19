@@ -1,40 +1,51 @@
-/* ******************** */
-/* These styles are required by the slide show */
-
-/* Slide show container */
-
-.ms-slide-show {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-  margin: auto;
+ /* Slide Show Styles */ 
+.slides-inner {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    transform: translate3d(0, 0, 0);
+    transition: 1000ms;
 }
 
-/* Slide show inner contains the slides images */
-
-.ms-slide-show > .slide-show-inner {
-  height: 100%;
-  position: absolute;
-  display: flex;
-  transform: translate3d(0,0,0);
-  transition: 1s;
-  transition-timing-function: ease-in-out;
+.slide-show {
+    overflow: hidden;
+    position: relative;
 }
 
-.ms-slide-show-idicator {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+.ms-next-button, .ms-prev-button {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;;
+    background-color:rgba(255,255,255,0.5);
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
 }
 
-.ms-slide-show-idicator > .ms-slide-indicator {
-  width: 16px;
-  height: 16px;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
+.ms-next-button {
+    right: 1em;
 }
 
-/* ******************** */
+.ms-prev-button {
+    left: 1em;
+}
 
+.ms-slide-indicators {
+    list-style: none;
+    position: absolute;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    left: 50%;
+    bottom: 1em;
+    transform: translate(-50%, 0);
+}
+
+.ms-slide-indicators > li {
+    width: 16px;
+    height: 16px;
+    margin: 4px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+}

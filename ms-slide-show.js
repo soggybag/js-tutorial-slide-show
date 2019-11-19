@@ -1,76 +1,99 @@
 
-
 (function() {
-  function init() {
-    const slides = document.querySelectorAll('.ms-slide-show')
-    for (let i = 0; i < slides.length; i += 1) {
-      makeSlides(slides[i])
-    }
-  }
+    function makeSlideshow(slides) {
+        // const slides = document.getElementById(slidesId)
+        const slidesInner = slides.querySelector('.slides-inner')
+        const images = slidesInner.querySelectorAll('img')
 
-  function makeSlides(slides) {
-    const images = Array.from(slides.querySelectorAll('.slide-show-inner > img'))
-    const slidesInner = slides.querySelector('.slide-show-inner')
+        // ---------------------------------
+        // Setup buttons 
 
-    let indicators = null
+        const nextButton = slides.querySelector('.ms-next-button')
+        const prevButton = slides.querySelector('.ms-prev-button')
 
-    if (slides.dataset.indicators) {
-      indicators = makeIndicators(slides, images.length)
-    }
-
-    let index = 0
-    const w = slides.clientWidth
-    console.log(w)
-
-    setInterval(() => {
-      index += 1
-      if (index === images.length) {
-        index = 0
-      }
-      // Use translate3d() for better performance!
-      slidesInner.style.transform = `translate3d(-${index * w}px, 0, 0)`
-      if (indicators !== null) {
-        for (let i = 0; i < indicators.length; i += 1) {
-          if (i === index) {
-            indicators[i].style.backgroundColor = 'rgba(255,255,255,1.0)'
-          } else {
-            indicators[i].style.backgroundColor = 'rgba(255,255,255,0.5)'
-          }
+        if (nextButton !== null) {
+            nextButton.addEventListener('click', function(e) {
+                e.preventDefault()
+                // clear the interval
+                // add a new interval
+                nextSlide()
+            })
         }
-      }
-    }, 3000)
-  }
 
-  function makeIndicators(slides, n) {
-    const el = document.createElement('div')
-    el.style.display = 'flex'
-    el.style.flexDirection = 'row'
-    el.style.justifyContent = 'center'
-    el.style.position = 'absolute'
-    el.style.left = '50%'
-    el.style.bottom = '0'
-    el.style.transform = 'translate(-50%, 0)'
-    el.style.zIndex = '999'
+        if (prevButton !== null) {
+            prevButton.addEventListener('click', function(e) {
+                e.preventDefault()
 
-    const indicators = []
+                prevSlide()
+            })
+        }
 
-    for (let i = 0; i < n; i += 1) {
-      const dot = document.createElement('div')
-      dot.style.width = '10px'
-      dot.style.height = '10px'
-      dot.style.margin = '5px'
-      dot.style.borderRadius = '50%'
-      dot.style.backgroundColor = 'rgba(255,255,255, 0.5)'
+        // ---------------------
+        // Setup indicators 
 
-      el.appendChild(dot)
-      indicators.push(dot)
+        const indicatorContainer = slides.querySelector('.ms-slide-indicators')
+        const indicators = []
+        if (indicatorContainer !== null) {
+            for (let i = 0; i < images.length; i += 1) {
+                const li = document.createElement('li') // <li>
+                indicatorContainer.appendChild(li)
+                indicators.push(li)
+            }
+            indicators[0].style.backgroundColor = 'rgba(255,255,255,1.0)'
+        }
+
+        // ---------------------
+        // Setup timer 
+
+        const delay = parseInt(slides.dataset.delay)
+        const transition = parseInt(slides.dataset.transition)
+        slidesInner.style.transition = `${transition}ms`
+
+        const slidesWidth = slides.clientWidth
+        
+        let index = 0
+
+        let interval = setInterval(nextSlide, delay)
+        // clearInterval(interval)
+
+        // ------------------------
+
+        function nextSlide() {
+            index += 1
+            if (index === images.length) {
+                index = 0
+            }
+            showSlide()
+        }
+
+        function prevSlide() {
+            index -= 1
+            if (index < 0) {
+                index = images.length - 1
+            }
+            showSlide()
+        }
+
+        function showSlide() {
+            // CSS - transform : translate3d(0, 0, 0);
+            slidesInner.style.transform = `translate3d(${index * -slidesWidth}px, 0, 0)`
+            // console.log(index * -slidesWidth)
+            indicators.forEach(function(el, i) {
+                if (i === index) {
+                    el.style.backgroundColor = 'rgba(255,255,255,1.0)'
+                } else {
+                    el.style.backgroundColor = 'rgba(255,255,255,0.5)'
+                }
+            })
+        }
+
+    } // end makeSlideshow
+
+    const slideshows = document.querySelectorAll('.ms-slide-show')
+    for (let i = 0; i < slideshows.length; i += 1) {
+        makeSlideshow(slideshows[i])
     }
+})() // IIFE
 
-    console.log(el)
-    slides.appendChild(el)
-    return indicators
-  }
 
-  init()
-})()
-  
+
