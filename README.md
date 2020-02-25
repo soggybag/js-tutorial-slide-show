@@ -55,6 +55,43 @@ If you made it through the tutorial here are some things you can try to extend t
     - `data-style="vertical"` - a vertical transition bottom to top
     - `data-style="fade"` - a cross fade transition
 
+## Use the ms-slide-show 
+
+To use this librar follow these steps. 
+
+Download: `ms-slide-show.js` and `ms-slide-show.css`
+
+Link the CSS file in the head of your document. 
+
+```HTML
+<link rel="stylesheet" href="ms-slide-show.css">
+```
+
+Then link to the js at tuhe bottom of the body tag. 
+
+```html
+<script src="ms-slide-show.js"></script>
+```
+
+To create a slideshow create a container with soem img tags and use the classes names: 
+
+- class="ms-slide-show" <- on the outer element
+- class="slides-inner" <- On the inner element containing the images
+
+```HTML
+<div id="slides-4" class="card ms-slide-show" data-delay="4000" data-transition="2000">
+    <div class="slides-inner">
+        <img src="images/p1-300-169.jpg" width="300" height="169" alt="hellbore">
+        <img src="images/p2-300-169.jpg" width="300" height="169" alt="li pollen">
+        <img src="images/p3-300-169.jpg" width="300" height="169" alt="pollen">
+        <img src="images/p4-300-169.jpg" width="300" height="169" alt="spores">
+    </div>
+</div>
+```
+
+
+
+
 ## TODOs
 
 - ~~TODO: Add link to videos~~
