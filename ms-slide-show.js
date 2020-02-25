@@ -1,4 +1,5 @@
 
+
 (function() {
   // ------------------------------------------
   // Initalize all slide shows found
@@ -13,45 +14,14 @@
   // Make a slides show
   function makeSlides(slides) {
 
-    const images = Array.from(slides.querySelectorAll('.slide-show-inner > img'))
+    const images = Array.from(slides.querySelectorAll('.slide-show-inner > *'))
     const slidesInner = slides.querySelector('.slide-show-inner')
 
-        const nextButton = slides.querySelector('.ms-next-button')
-        const prevButton = slides.querySelector('.ms-prev-button')
+    let indicators = null
 
-        if (nextButton !== null) {
-            nextButton.addEventListener('click', function(e) {
-                e.preventDefault()
-                // clear the interval
-                // add a new interval
-                nextSlide()
-            })
-        }
-
-        if (prevButton !== null) {
-            prevButton.addEventListener('click', function(e) {
-                e.preventDefault()
-
-                prevSlide()
-            })
-        }
-
-        // ---------------------
-        // Setup indicators 
-
-        const indicatorContainer = slides.querySelector('.ms-slide-indicators')
-        const indicators = []
-        if (indicatorContainer !== null) {
-            for (let i = 0; i < images.length; i += 1) {
-                const li = document.createElement('li') // <li>
-                indicatorContainer.appendChild(li)
-                indicators.push(li)
-            }
-            indicators[0].style.backgroundColor = 'rgba(255,255,255,1.0)'
-        }
-
-        // ---------------------
-        // Setup timer 
+    if (slides.dataset.indicators) {
+      indicators = makeIndicators(slides, images.length)
+    }
 
     let index = 0
     const w = slides.clientWidth
@@ -142,7 +112,49 @@
       el.appendChild(dot)
       indicators.push(dot)
     }
-})() // IIFE
+
+    console.log(el)
+    slides.appendChild(el)
+    return indicators
+  }
 
   init()
 })();
+
+
+// const t = 55
+
+// function test() {
+//   const u = []
+
+//   for (let i = 0; i < 5; i += 1) {
+//     const y = i * t
+//     u.push(y)
+//   }
+// }
+
+// function makeDie(n) {
+//   const x = n
+//   let f = 13
+//   return function() {
+//     return Math.floor(Math.random() * x) + 1
+//   }
+// }
+
+
+// console.log('**************************************');
+// const d6 = makeDie(6);
+// const d10 = makeDie(10);
+// const coin = makeDie(2)
+// console.log(d6())  // 1-6
+// console.log(d10())  // 1-10
+// console.log(coin()) // 1-2
+// console.log('**************************************')
+// console.log(d6)
+// console.log(d10)
+// console.log(coin)
+// console.log((makeDie(999999)()))
+// console.log(typeof d6)
+// d6.name = "I am a 6 side die"
+// console.log(d6.name)
+// console.log('**************************************')
