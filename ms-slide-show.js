@@ -1,6 +1,5 @@
 
 (function() {
-<<<<<<< HEAD
   // ------------------------------------------
   // Initalize all slide shows found
   function init() {
@@ -16,15 +15,6 @@
 
     const images = Array.from(slides.querySelectorAll('.slide-show-inner > img'))
     const slidesInner = slides.querySelector('.slide-show-inner')
-=======
-    function makeSlideshow(slides) {
-        // const slides = document.getElementById(slidesId)
-        const slidesInner = slides.querySelector('.slides-inner')
-        const images = slidesInner.querySelectorAll('img')
-
-        // ---------------------------------
-        // Setup buttons 
->>>>>>> 3c43ef8d1ba22bdbb25253b92212d71a3f8dbf2d
 
         const nextButton = slides.querySelector('.ms-next-button')
         const prevButton = slides.querySelector('.ms-prev-button')
@@ -63,7 +53,6 @@
         // ---------------------
         // Setup timer 
 
-<<<<<<< HEAD
     let index = 0
     const w = slides.clientWidth
     console.log(w)
@@ -152,101 +141,8 @@
 
       el.appendChild(dot)
       indicators.push(dot)
-=======
-        const delay = parseInt(slides.dataset.delay)
-        const transition = parseInt(slides.dataset.transition)
-        slidesInner.style.transition = `${transition}ms`
-
-        const slidesWidth = slides.clientWidth
-        
-        let index = 0
-
-        let interval = setInterval(nextSlide, delay)
-        // clearInterval(interval)
-
-        // ------------------------
-
-        function nextSlide() {
-            index += 1
-            if (index === images.length) {
-                index = 0
-            }
-            showSlide()
-        }
-
-        function prevSlide() {
-            index -= 1
-            if (index < 0) {
-                index = images.length - 1
-            }
-            showSlide()
-        }
-
-        function showSlide() {
-            // CSS - transform : translate3d(0, 0, 0);
-            slidesInner.style.transform = `translate3d(${index * -slidesWidth}px, 0, 0)`
-            // console.log(index * -slidesWidth)
-            indicators.forEach(function(el, i) {
-                if (i === index) {
-                    el.style.backgroundColor = 'rgba(255,255,255,1.0)'
-                } else {
-                    el.style.backgroundColor = 'rgba(255,255,255,0.5)'
-                }
-            })
-        }
-
-    } // end makeSlideshow
-
-    const slideshows = document.querySelectorAll('.ms-slide-show')
-    for (let i = 0; i < slideshows.length; i += 1) {
-        makeSlideshow(slideshows[i])
->>>>>>> 3c43ef8d1ba22bdbb25253b92212d71a3f8dbf2d
     }
 })() // IIFE
 
-
-
-<<<<<<< HEAD
   init()
 })();
-
-
-// const t = 55
-
-// function test() {
-//   const u = []
-
-//   for (let i = 0; i < 5; i += 1) {
-//     const y = i * t
-//     u.push(y)
-//   }
-// }
-
-// function makeDie(n) {
-//   const x = n
-//   let f = 13
-//   return function() {
-//     return Math.floor(Math.random() * x) + 1
-//   }
-// }
-
-
-// console.log('**************************************');
-// const d6 = makeDie(6);
-// const d10 = makeDie(10);
-// const coin = makeDie(2)
-// console.log(d6())  // 1-6
-// console.log(d10())  // 1-10
-// console.log(coin()) // 1-2
-// console.log('**************************************')
-// console.log(d6)
-// console.log(d10)
-// console.log(coin)
-// console.log((makeDie(999999)()))
-// console.log(typeof d6)
-// d6.name = "I am a 6 side die"
-// console.log(d6.name)
-// console.log('**************************************')
-
-=======
->>>>>>> 3c43ef8d1ba22bdbb25253b92212d71a3f8dbf2d
