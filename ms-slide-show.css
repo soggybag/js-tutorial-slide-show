@@ -36,5 +36,23 @@
   border-radius: 50%;
 }
 
+.ms-slide-buttons > .next-button, 
+.ms-slide-buttons > .prev-button {
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  background-color: #fff;
+}
+
+.ms-slide-buttons > .next-button {
+  right: 0;
+}
+
+.ms-slide-buttons > .prev-button {
+  left: 0;
+}
 /* ******************** */
 
