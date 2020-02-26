@@ -7,7 +7,7 @@
     transition: 1000ms;
 }
 
-.ms-slide-show {
+.slide-show {
     overflow: hidden;
     position: relative;
 }
