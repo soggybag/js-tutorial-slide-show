@@ -15,7 +15,7 @@
   function makeSlides(slides) {
 
     const images = Array.from(slides.querySelectorAll('.slide-show-inner > *'))
-    const slidesInner = slides.querySelector('.slide-show-inner')
+    const slidesInner = slides.querySelector('.slides-inner')
 
     let indicators = null
 
@@ -33,6 +33,7 @@
 
     const nextButton = slides.querySelector('.next-button')
     const prevButton = slides.querySelector('.prev-button')
+
     if (nextButton !== null) {
       nextButton.addEventListener('click', function(e) {
         nextSlide()
