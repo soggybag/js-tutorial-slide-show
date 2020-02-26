@@ -21,6 +21,10 @@
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .ms-next-button {
@@ -31,8 +35,6 @@
     left: 1em;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 .ms-slide-buttons > .next-button, 
 .ms-slide-buttons > .prev-button {
   display: block;
@@ -51,8 +53,17 @@
 .ms-slide-buttons > .prev-button {
   left: 0;
 }
-/* ******************** */
-=======
+
+.ms-next-button::after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-top: 4px solid #fff;
+    border-right: 4px solid #fff;
+    transform: rotate(45deg);
+}
+
 .ms-prev-button::after {
     content: '';
     display: block;
@@ -63,8 +74,6 @@
     transform: rotate(45deg);
 }
 
-=======
->>>>>>> parent of 3c43ef8... Update ms-slide-show.css
 .ms-slide-indicators {
     list-style: none;
     position: absolute;
@@ -82,10 +91,5 @@
     margin: 4px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.5);
-<<<<<<< HEAD
 }
->>>>>>> 3c43ef8d1ba22bdbb25253b92212d71a3f8dbf2d
 
-=======
-}
->>>>>>> parent of 3c43ef8... Update ms-slide-show.css
