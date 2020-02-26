@@ -1,11 +1,50 @@
 # JavaScript Tutorial: Slideshow
 
-This repository contains all of the sample files to get started and the completed project and source code for reference.
+This is a simple JavaScript Slide show simialr to the Bootstrap Carousel. 
 
-The goal of this tutorial is to create a JavaScript slideshow. The slideshow will be similar to what you see on web banners with images that cycle sliding right to left. You'll build the whole things from scratch. 
+View a demo here. 
 
-The code used will also be portable, it will be able to be used in any web site without modification.   
-This tutorial focusses on vanilla JS and does not use any libraries. You'll write all of the code yourself! 
+You can use the code in your projects by following the [documentation](#documentation). 
+
+Or, build the slideshow yourself by following the [tutorial](#tutorial).
+
+## Documentation 
+
+To use this librar follow these steps. 
+
+Download: `ms-slide-show.js` and `ms-slide-show.css`
+
+Link the CSS file in the head of your document. 
+
+```HTML
+<link rel="stylesheet" href="ms-slide-show.css">
+```
+
+Then link to the js at tuhe bottom of the body tag. 
+
+```html
+<script src="ms-slide-show.js"></script>
+```
+
+To create a slideshow create a container with soem img tags and use the classes names: 
+
+- class="ms-slide-show" <- on the outer element
+- class="slides-inner" <- On the inner element containing the images
+
+```HTML
+<div id="slides-4" class="card ms-slide-show" data-delay="4000" data-transition="2000">
+    <div class="slides-inner">
+        <img src="images/p1-300-169.jpg" width="300" height="169" alt="hellbore">
+        <img src="images/p2-300-169.jpg" width="300" height="169" alt="li pollen">
+        <img src="images/p3-300-169.jpg" width="300" height="169" alt="pollen">
+        <img src="images/p4-300-169.jpg" width="300" height="169" alt="spores">
+    </div>
+</div>
+```
+
+## Tutorial
+
+You can build this Slide show from scratch for yourself. There is a ton ofJavaScript concepts to learn and it's great practice! 
 
 ## What will you learn in this tutorial? 
 
@@ -54,40 +93,6 @@ If you made it through the tutorial here are some things you can try to extend t
     - `data-style="horizontal"` - a right to left transition
     - `data-style="vertical"` - a vertical transition bottom to top
     - `data-style="fade"` - a cross fade transition
-
-## Use the ms-slide-show 
-
-To use this librar follow these steps. 
-
-Download: `ms-slide-show.js` and `ms-slide-show.css`
-
-Link the CSS file in the head of your document. 
-
-```HTML
-<link rel="stylesheet" href="ms-slide-show.css">
-```
-
-Then link to the js at tuhe bottom of the body tag. 
-
-```html
-<script src="ms-slide-show.js"></script>
-```
-
-To create a slideshow create a container with soem img tags and use the classes names: 
-
-- class="ms-slide-show" <- on the outer element
-- class="slides-inner" <- On the inner element containing the images
-
-```HTML
-<div id="slides-4" class="card ms-slide-show" data-delay="4000" data-transition="2000">
-    <div class="slides-inner">
-        <img src="images/p1-300-169.jpg" width="300" height="169" alt="hellbore">
-        <img src="images/p2-300-169.jpg" width="300" height="169" alt="li pollen">
-        <img src="images/p3-300-169.jpg" width="300" height="169" alt="pollen">
-        <img src="images/p4-300-169.jpg" width="300" height="169" alt="spores">
-    </div>
-</div>
-```
 
 
 
