@@ -84,7 +84,18 @@ Add buttons to your slides by adding anchors with the class `ms-slides__next-but
 
 Add indicators by including an `<ol>` with the class name `ms-slides__indicators`
 
-<ol class="ms-slides__indicators"></ol>
+```HTML
+<div class="ms-slides" data-delay="4000" data-transition="2000">
+  <div class="ms-slides__inner">
+    ...
+  </div>
+
+  <ol class="ms-slides__indicators"></ol>
+
+  <a href="#" class="ms-slides__next-button"></a>
+  <a href="#" class="ms-slides__prev-button"></a>
+</div>
+```
 
 See the demo code index.html in this repo for a working example. 
 
