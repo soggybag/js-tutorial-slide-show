@@ -1,5 +1,5 @@
  /* Slide Show Styles */ 
-.slides-inner {
+.ms-slides__inner {
     display: flex;
     flex-direction: row;
     position: absolute;
@@ -7,12 +7,12 @@
     transition: 1000ms;
 }
 
-.slide-show {
+.ms-slides {
     overflow: hidden;
     position: relative;
 }
 
-.ms-next-button, .ms-prev-button {
+.ms-slides__next-button, .ms-slides__prev-button {
     display: block;
     width: 40px;
     height: 40px;
@@ -27,15 +27,15 @@
     align-items: center;
 }
 
-.ms-next-button {
+.ms-slides__next-button {
     right: 1em;
 }
 
-.ms-prev-button {
+.ms-slides__prev-button {
     left: 1em;
 }
 
-.ms-slide-buttons > .next-button, 
+/* .ms-slide-buttons > .next-button, 
 .ms-slide-buttons > .prev-button {
   display: block;
   width: 40px;
@@ -52,9 +52,9 @@
 
 .ms-slide-buttons > .prev-button {
   left: 0;
-}
+} */
 
-.ms-next-button::after {
+.ms-slides__next-button::after {
     content: '';
     display: block;
     width: 10px;
@@ -64,7 +64,7 @@
     transform: rotate(45deg);
 }
 
-.ms-prev-button::after {
+.ms-slides__prev-button::after {
     content: '';
     display: block;
     width: 10px;
@@ -74,7 +74,7 @@
     transform: rotate(45deg);
 }
 
-.ms-slide-indicators {
+.ms-slides__indicators {
     list-style: none;
     position: absolute;
     display: flex;
@@ -85,7 +85,7 @@
     transform: translate(-50%, 0);
 }
 
-.ms-slide-indicators > li {
+.ms-slides__indicators > li {
     width: 16px;
     height: 16px;
     margin: 4px;
