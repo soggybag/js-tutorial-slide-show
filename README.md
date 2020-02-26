@@ -2,7 +2,7 @@
 
 This is a simple JavaScript Slide show simialr to the Bootstrap Carousel. 
 
-View a demo here. 
+[View a demo](https://soggybag.github.io/js-tutorial-slide-show/). 
 
 You can use the code in your projects by following the [documentation](#documentation). 
 
@@ -10,7 +10,7 @@ Or, build the slideshow yourself by following the [tutorial](#tutorial).
 
 ## Documentation 
 
-To use this librar follow these steps. 
+To use this library follow these steps.
 
 Download: `ms-slide-show.js` and `ms-slide-show.css`
 
