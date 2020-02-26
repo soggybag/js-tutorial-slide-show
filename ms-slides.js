@@ -62,8 +62,16 @@
       // ---------------------
       // Setup timer 
 
-      const delay = parseInt(slides.dataset.delay)
-      const transition = parseInt(slides.dataset.transition)
+      let delay = parseInt(slides.dataset.delay)
+      let transition = parseInt(slides.dataset.transition)
+
+      if (slides.dataset.delay === null) {
+        delay = 3000
+      }
+
+      if (slides.dataset.transition === null) {
+        transition = 400
+      }
 
       slidesInner.style.transition = `${transition}ms`
 

@@ -10,37 +10,83 @@ Or, build the slideshow yourself by following the [tutorial](#tutorial).
 
 ## Documentation 
 
-To use this library follow these steps.
+To use this library and setup a slideshow/carousel follow the steps below. 
 
-Download: `ms-slide-show.js` and `ms-slide-show.css`
+**Download the js and CSS files**
+
+Download: `ms-slides.js` and `ms-slides.css`
 
 Link the CSS file in the head of your document. 
 
 ```HTML
-<link rel="stylesheet" href="ms-slide-show.css">
+<link rel="stylesheet" href="ms-slides.css">
 ```
 
-Then link to the js at tuhe bottom of the body tag. 
+Link to the js file at the bottom of the body tag.
 
 ```html
-<script src="ms-slide-show.js"></script>
+<script src="ms-slides.js"></script>
 ```
 
-To create a slideshow create a container with soem img tags and use the classes names: 
+**Create the Slides Container**
 
-- class="ms-slide-show" <- on the outer element
-- class="slides-inner" <- On the inner element containing the images
+Create a slide show container. It must have the class name: 'ms-slides'
+
+Include the attribute `data-delay` to set the time between slides in milliseconds. Set data-delay to 0 to create slides that don't change automatically. 
+
+Include the `data-transition` to set the time to change from one slide to the next. 
 
 ```HTML
-<div id="slides-4" class="card ms-slide-show" data-delay="4000" data-transition="2000">
-    <div class="slides-inner">
-        <img src="images/p1-300-169.jpg" width="300" height="169" alt="hellbore">
-        <img src="images/p2-300-169.jpg" width="300" height="169" alt="li pollen">
-        <img src="images/p3-300-169.jpg" width="300" height="169" alt="pollen">
-        <img src="images/p4-300-169.jpg" width="300" height="169" alt="spores">
-    </div>
+<div class="ms-slides" data-delay="8000" data-transition="400">
+    
 </div>
 ```
+
+Add an inner element with the class name `class="ms-slides__inner"`. This element will hold the images or other elements used slides.
+
+```HTML
+<div class="ms-slides" data-delay="8000" data-transition="400">
+  <div class="ms-slides__inner">
+      
+  </div>
+</div>
+```
+
+Inside `ms-slides__inner` element add your images. 
+
+```HTML
+<div class="ms-slides" data-delay="4000" data-transition="2000">
+  <div class="ms-slides__inner">
+    <img src="images/p1-300-169.jpg" width="300" height="169" alt="hellbore">
+    <img src="images/p2-300-169.jpg" width="300" height="169" alt="li pollen">
+    <img src="images/p3-300-169.jpg" width="300" height="169" alt="pollen">
+    <img src="images/p4-300-169.jpg" width="300" height="169" alt="spores">
+  </div>
+</div>
+```
+
+Pro tip: the children of `ms-slides__inner` be slides, and these can be any type. 
+
+**Add buttons and indicators**
+
+Add buttons to your slides by adding anchors with the class `ms-slides__next-button` and `ms-slides__prev-button`. These should be children of `ms-slides`
+
+```HTML
+<div class="ms-slides" data-delay="4000" data-transition="2000">
+  <div class="ms-slides__inner">
+    ...
+  </div>
+
+  <a href="#" class="ms-slides__next-button"></a>
+  <a href="#" class="ms-slides__prev-button"></a>
+</div>
+```
+
+Add indicators by including an `<ol>` with the class name `ms-slides__indicators`
+
+<ol class="ms-slides__indicators"></ol>
+
+See the demo code index.html in this repo for a working example. 
 
 ## Tutorial
 
@@ -51,7 +97,7 @@ You can build this Slide show from scratch for yourself. There is a ton ofJavaSc
 - Variables 
   - Constants, and variable variables
 - Scope
-  - Clossure
+  - Closure
 - Functions
   - Callbacks
   - Generic functions that can be applied anywhere 
