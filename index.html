@@ -6,6 +6,15 @@
         <style>
             /* CSS Styles */
 
+            body {
+              font-family: Arial, Helvetica, sans-serif;
+            }
+
+            .container {
+                width: 1200px;
+                margin: auto;
+            }
+
             /* Developer Styles */
             #slides {
                 width: 1200px;
@@ -16,69 +25,97 @@
             .small-slides {
                 width: 300px;
                 height: 169px;
+                margin: auto;
             }
 
             .card-row {
                 display: flex;
-                justify-content: center;
+                justify-content: space-between;
             }
 
             .card-row > div {
                 margin: 1em;
+                flex: 1;
             }
         </style>
     </head>
     <body>
+      <div class="container">
+        <h1>MS Slides Demo</h1>
+        
+        
         <!-- Big Slideshow -->
         <!-- delay 8 secs transition time 0.4 secs-->
         <div id="slides" class="ms-slides" data-delay="8000" data-transition="400">
-            <!-- Define the Slide Show Elements -->
-            <div class="ms-slides__inner">
-                <img src="images/bee-1200-400.jpg" width="1200" height="400" alt="bee">
-                <img src="images/beetle-1200-400.jpg" width="1200" height="400" alt="beetle">
-                <img src="images/dandelion-1200-400.jpg" width="1200" height="400" alt="dandelion">
-                <img src="images/ladybug-1200-400.jpg" width="1200" height="400" alt="ladybug">
-            </div>
+          <!-- Define the Slide Show Elements -->
+          <div class="ms-slides__inner">
+            <img src="images/bee-1200-400.jpg" width="1200" height="400" alt="bee">
+            <img src="images/beetle-1200-400.jpg" width="1200" height="400" alt="beetle">
+            <img src="images/dandelion-1200-400.jpg" width="1200" height="400" alt="dandelion">
+            <img src="images/ladybug-1200-400.jpg" width="1200" height="400" alt="ladybug">
+          </div>
 
-            <!-- Show Indicators -->
-            <ol class="ms-slides__indicators">
-                <!-- slide indicators -->
-            </ol>
+          <!-- Show Indicators -->
+          <ol class="ms-slides__indicators">
+            <!-- slide indicators -->
+          </ol>
 
-            <!-- Show Next and Previous Buttons -->
-            <a href="#" class="ms-slides__next-button"></a>
-            <a href="#" class="ms-slides__prev-button"></a>
+          <!-- Show Next and Previous Buttons -->
+          <a href="#" class="ms-slides__next-button"></a>
+          <a href="#" class="ms-slides__prev-button"></a>
+        </div>
+        <!-- Notes -->
+        <div>
+          <p>This example shows all features in use. Slides are changing every 
+            8 seconds with 400 millisecond transition. The buttons and 
+          indicators are visible.</p>
         </div>
         <!-- Big Slideshow -->
 
         <!-- Row of Small Slideshows -->
         <div class="card-row">
+
+          <div>
             <!-- Slides with no options -->
             <!-- delay 4 secs transition time 2 secs-->
             <div id="slides-2" class="ms-slides small-slides" data-delay="4000" data-transition="2000">
-                <div class="ms-slides__inner">
-                    <img src="images/hellebore-pollen-300-169.jpg" width="300" height="169" alt="hellbore">
-                    <img src="images/li-pollen-300-169.jpg" width="300" height="169" alt="li pollen">
-                    <img src="images/pollen-300-169.jpg" width="300" height="169" alt="pollen">
-                    <img src="images/spores-300-169.jpg" width="300" height="169" alt="spores">
-                </div>
+              <div class="ms-slides__inner">
+                <img src="images/hellebore-pollen-300-169.jpg" width="300" height="169" alt="hellbore">
+                <img src="images/li-pollen-300-169.jpg" width="300" height="169" alt="li pollen">
+                <img src="images/pollen-300-169.jpg" width="300" height="169" alt="pollen">
+                <img src="images/spores-300-169.jpg" width="300" height="169" alt="spores">
+              </div>
             </div>
-    
+            <!-- Notes -->
+            <div>
+              <p>This slideshow runs on it's own with no controls. Slides change 
+                every 4 seconds with a 2second transition time.</p>
+            </div>
+          </div>
+
+          <div>
             <!-- Slides with indicators -->
             <!-- delay 5 secs transition time 0.8 secs -->
             <div id="slides-3" class="ms-slides small-slides" data-delay="5000" data-transition="800">
-                <div class="ms-slides__inner">
-                    <img src="images/Cactus_flower_pollen-300-169.jpg" width="300" height="169" alt="hellbore">
-                    <img src="images/toxic-mold-spore-300-169.jpg" width="300" height="169" alt="li pollen">
-                    <img src="images/yellow-polllen-300-169.jpg" width="300" height="169" alt="pollen">
-                    <img src="images/zsa-300-169.jpg" width="300" height="169" alt="zsa">
-                </div>
-                <!-- Show Indicators -->
-                <ol class="ms-slides__indicators">
-                    <!-- slide indicators -->
-                </ol>
+              <div class="ms-slides__inner">
+                <img src="images/Cactus_flower_pollen-300-169.jpg" width="300" height="169" alt="hellbore">
+                <img src="images/toxic-mold-spore-300-169.jpg" width="300" height="169" alt="li pollen">
+                <img src="images/yellow-polllen-300-169.jpg" width="300" height="169" alt="pollen">
+                <img src="images/zsa-300-169.jpg" width="300" height="169" alt="zsa">
+              </div>
+              <!-- Show Indicators -->
+              <ol class="ms-slides__indicators">
+                <!-- slide indicators -->
+              </ol>
             </div>
+            <!-- Notes -->
+            <div>
+              <p>This slide show shows the indicators only. Slides change every 
+                5 seconds with an 800 millisecond transition.</p>
+            </div>
+          </div>
     
+          <div>
             <!-- Slides with Buttons -->
             <!-- Delay time 0 slides only change when the buttons are clickes transition 0.2 secs -->
             <div id="slides-4" class="ms-slides small-slides" data-delay="0" data-transition="2000">
@@ -93,8 +130,14 @@
                 <a href="#" class="ms-slides__next-button"></a>
                 <a href="#" class="ms-slides__prev-button"></a>
             </div>
+            <div>
+              <p>This slide show shows the next and previous button. The delay is 
+                set to 0 which allows slides to change only when a button is clicked.
+                The transition time is 2 seconds.</p>
+            </div>
+          </div>
         </div>
-
+      </div>
 
         <script src="ms-slides.js"></script>
         <script>
